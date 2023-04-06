@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   postgres:
-    image: debezium/postgres:13
+    image: debezium/postgres:11
     ports:
       - 5432:5432
     healthcheck:
@@ -32,7 +32,7 @@ services:
     ports:
     - 9092:9092
   debezium:
-    image: debezium/connect:1.4
+    image: debezium/connect:2.1
     environment:
       BOOTSTRAP_SERVERS: kafka:9092
       GROUP_ID: 1
